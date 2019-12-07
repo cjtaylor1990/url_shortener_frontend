@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './../../logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			authenticated: true,
+		};
+	}
+
+	async setStateAsync(state) {
+		return new Promise((resolve) => {
+			this.setState(state,resolve)
+		});
+	}
+
+	async authenticate(username,password){
+		if (username && password) {
+			//let forecasts = await getWeather.fetchWeather(place);
+			//await this.setStateAsync({forecasts:forecasts});
+		}
+	}
+
+	render() {
+    if (this.state.authenticated) {
+		  return (
+			  <div className="App">
+				  <h1> Your authenticated! </h1>
+			  </div>
+      );
+    } else {
+      return (
+        <div className="App">
+				  <h1> Your NOT authenticated! </h1>
+			  </div>
+      );
+    };
+	};
+
 }
 
-export default App;
+export default App
