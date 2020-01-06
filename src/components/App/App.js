@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 
+import LoginForm from '../LoginForm/LoginForm.js';
+
 class App extends React.Component {
 	constructor(props) {
 		super(props)
 		
 		this.state = {
-			authenticated: true,
+			authenticated: false,
 		};
 	}
 
@@ -24,19 +26,19 @@ class App extends React.Component {
 	}
 
 	render() {
-    if (this.state.authenticated) {
-		  return (
-			  <div className="App">
-				  <h1> Your authenticated! </h1>
-			  </div>
-      );
-    } else {
-      return (
-        <div className="App">
-				  <h1> Your NOT authenticated! </h1>
-			  </div>
-      );
-    };
+    	if (this.state.authenticated) {
+			return (
+				<div className="App">
+					<h1> Your authenticated! </h1>
+				</div>
+      	);
+    	} else {
+      		return (
+        		<div className="App">
+					<LoginForm />
+				</div>
+      		);
+    	};
 	};
 
 }

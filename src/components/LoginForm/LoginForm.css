@@ -1,0 +1,12 @@
+
+input {
+  background-color: lightgray;
+  display: block;
+  margin-bottom: 1em;
+}
+
+button.login {
+  background-color: lightskyblue;
+  border-radius: 0.25rem;
+  display:block;
+}
