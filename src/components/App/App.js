@@ -10,19 +10,14 @@ class App extends React.Component {
 		this.state = {
 			authenticated: false,
 		};
+
+		this.authenticate = this.authenticate.bind(this);
 	}
 
-	async setStateAsync(state) {
-		return new Promise((resolve) => {
-			this.setState(state,resolve)
-		});
-	}
-
-	async authenticate(username,password){
+	authenticate(username,password){
 		if (username && password) {
-			//let forecasts = await getWeather.fetchWeather(place);
-			//await this.setStateAsync({forecasts:forecasts});
-		}
+			this.setState({authenticated: true});
+		};
 	}
 
 	render() {
@@ -35,7 +30,7 @@ class App extends React.Component {
     	} else {
       		return (
         		<div className="App">
-					<LoginForm />
+					<LoginForm authenticate={this.authenticate} />
 				</div>
       		);
     	};
