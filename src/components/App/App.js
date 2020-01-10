@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import LoginForm from '../LoginForm/LoginForm.js';
+import ShortenerForm from '../ShortenerForm/ShortenerForm.js';
 
 class App extends React.Component {
 	constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
     	if (this.state.authenticated) {
 			return (
 				<div className="App">
-					<h1> You're authenticated! </h1>
+					<ShortenerForm />
 				</div>
       	);
     	} else {

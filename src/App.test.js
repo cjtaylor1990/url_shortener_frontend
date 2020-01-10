@@ -25,7 +25,7 @@ test('Login screen has blank username and password', () => {
     expect(passwordInput).toHaveTextContent('');
 });
 
-test('User enters username and password. User gets auth confirmation after submission.', () => {
+test('User submits username and password and now can access main page', () => {
     const { getByText, getByPlaceholderText } = render(<App />)
     
     const usernameInput = getByPlaceholderText('Username');
@@ -40,7 +40,11 @@ test('User enters username and password. User gets auth confirmation after submi
     const leftClick = {button: 1};
     fireEvent.click(loginButton, leftClick);
 
-    const authConfirmation = getByText("You're authenticated!");
-    expect(authConfirmation).toBeTruthy();
+    const shortUrlInput = getByPlaceholderText('Shortened URL');
+    const fullUrlInput = getByPlaceholderText('Original URL')
+
+    expect(shortUrlInput).toBeTruthy();
+    expect(fullUrlInput).toBeTruthy();
 
 });
+
