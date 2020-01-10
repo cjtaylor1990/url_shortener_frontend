@@ -24,7 +24,7 @@ class App extends React.Component {
     	if (this.state.authenticated) {
 			return (
 				<div className="App">
-					<h1> Your authenticated! </h1>
+					<h1> You're authenticated! </h1>
 				</div>
       	);
     	} else {
