@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import LoginForm from '../LoginForm/LoginForm.js';
-import ShortenerForm from '../ShortenerForm/ShortenerForm.js';
+import UrlForm from '../UrlForm/UrlForm.js';
 
 class App extends React.Component {
 	constructor(props) {
@@ -10,6 +10,8 @@ class App extends React.Component {
 		
 		this.state = {
 			authenticated: false,
+			username: undefined,
+			password: undefined
 		};
 
 		this.authenticate = this.authenticate.bind(this);
@@ -17,7 +19,11 @@ class App extends React.Component {
 
 	authenticate(username,password){
 		if (username && password) {
-			this.setState({authenticated: true});
+			this.setState({
+				authenticated: true,
+				username: username,
+				password: password
+			});
 		};
 	}
 
@@ -25,7 +31,7 @@ class App extends React.Component {
     	if (this.state.authenticated) {
 			return (
 				<div className="App">
-					<ShortenerForm />
+					<UrlForm />
 				</div>
       	);
     	} else {

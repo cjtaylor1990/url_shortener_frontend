@@ -1,12 +1,11 @@
 import React from 'react';
-import './ShortenerForm.css';
+import './UrlAdder.css';
 
-class ShortenerForm extends React.Component {
+class UrlAdder extends React.Component {
 
 	render() {
     	return(
-			<div className="shortenerForm">
-				<h1> URL Shortener </h1>
+			<div className="urlAdder">
 				<input type="text" className="fullUrl" placeholder="Original URL" onChange={this.handlePasswordChange}/>
 				<input type="text" className="shortUrl" placeholder="Shortened URL" onChange={this.handleUsernameChange}/>
 				<button type="submit" className="addUrl"> Add URL </button>
@@ -16,4 +15,4 @@ class ShortenerForm extends React.Component {
 
 };
 
-export default ShortenerForm;
+export default UrlAdder;

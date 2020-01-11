@@ -34,6 +34,7 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "jsdom": "^15.2.1",
-    "jsdom-global": "^3.0.2"
+    "jsdom-global": "^3.0.2",
+    "react-test-renderer": "^16.12.0"
   }
 }
