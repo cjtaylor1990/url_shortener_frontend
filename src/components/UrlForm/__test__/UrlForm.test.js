@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import UrlForm from '../UrlForm.js';
+
+afterEach(cleanup);
 
 describe('User accesses UrlForm component', () => {
     

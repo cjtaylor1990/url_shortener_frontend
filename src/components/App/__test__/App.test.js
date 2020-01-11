@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import { render, cleanup, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import App from '../App.js';
+
+afterEach(cleanup);
 
 describe('User initially accesses App', () => {
     
