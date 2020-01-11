@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User accesses UrlForm component matches snapshot 1`] = `
+<div
+  className="urlForm"
+  data-testid="urlForm"
+>
+  <div
+    className="urlAdder"
+    data-testid="urlAdder"
+  >
+    <input
+      className="fullUrl"
+      placeholder="Original URL"
+      type="text"
+    />
+    <input
+      className="shortUrl"
+      placeholder="Shortened URL"
+      type="text"
+    />
+    <button
+      className="addUrl"
+      type="submit"
+    >
+       Add URL 
+    </button>
+  </div>
+</div>
+`;

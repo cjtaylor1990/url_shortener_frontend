@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User initially accesses App matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="loginForm"
+    data-testid="loginForm"
+  >
+    <input
+      className="username"
+      data-testid="loginFormUsername"
+      onChange={[Function]}
+      placeholder="Username"
+      type="text"
+    />
+    <input
+      className="password"
+      data-testid="loginFormPassword"
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+    />
+    <button
+      className="login"
+      data-testid="loginFormLogin"
+      onClick={[Function]}
+      type="submit"
+    >
+       Log In 
+    </button>
+  </div>
+</div>
+`;
