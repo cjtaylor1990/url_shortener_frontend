@@ -20,16 +20,6 @@ test('App initially renders with screen with LoginForm', () => {
 
 });
 
-test('LoginForm has blank username and password', () => {
-    const { getByPlaceholderText } = render(<App />);
-    
-    const usernameInput = getByPlaceholderText('Username');
-    const passwordInput = getByPlaceholderText('Password');
-    
-    expect(usernameInput).toHaveTextContent('');
-    expect(passwordInput).toHaveTextContent('');
-});
-
 test('User submits username and password. App now renders UrlForm.', () => {
     const { getByText, getByPlaceholderText } = render(<App />);
     
