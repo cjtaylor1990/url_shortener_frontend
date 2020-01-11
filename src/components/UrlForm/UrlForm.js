@@ -7,7 +7,7 @@ class UrlForm extends React.Component {
 
 	render() {
     	return(
-			<div className="urlForm">
+			<div data-testid="urlForm" className="urlForm">
 				<UrlAdder />
 			</div>
 		);
