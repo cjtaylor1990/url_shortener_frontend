@@ -31,4 +31,13 @@ describe('User accesses UrlForm component', () => {
         
         expect(renderedUrlAdder).toBeInTheDocument();
     });
+
+    it('UrlForm contains UrlListComponent', () => {
+        const { getByTestId } = render(<UrlForm />);
+
+        const renderedUrlList = getByTestId('urlList');
+
+        expect(renderedUrlList).toBeInTheDocument();
+    });
+    
 });

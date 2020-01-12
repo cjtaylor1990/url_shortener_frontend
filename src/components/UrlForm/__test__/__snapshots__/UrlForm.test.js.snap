@@ -26,5 +26,9 @@ exports[`User accesses UrlForm component matches snapshot 1`] = `
        Add URL 
     </button>
   </div>
+  <div
+    className="urlList"
+    data-testid="urlList"
+  />
 </div>
 `;
