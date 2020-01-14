@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render, cleanup } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
 
 import UrlForm from '../UrlForm.js';
 
-afterEach(cleanup);
+//afterEach(cleanup);
 
 describe('User accesses UrlForm component', () => {
+
+    afterEach(cleanup);
     
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -40,4 +42,36 @@ describe('User accesses UrlForm component', () => {
         expect(renderedUrlList).toBeInTheDocument();
     });
     
+});
+
+describe('User shortens URL using the UrlForm component', () => {
+    
+    const { getByTestId } = render(<UrlForm />);
+    const fullUrlInput = getByTestId('urlAdderFullUrl');
+    const shortUrlInput = getByTestId('urlAdderShortUrl');
+    const urlAddButton = getByTestId('urlAdderButton');
+
+    const fullUrl = 'http//www.userslongurl.com';
+    const shortKey = 'shorturl'
+    const shortUrl = 'http//www.urlshortener.com/' + shortKey;
+
+    fireEvent.change(fullUrlInput, {target: {value: fullUrl}});
+    fireEvent.change(shortUrlInput, {target: {value: shortKey}});
+
+    const leftClick = {button: 1};
+    fireEvent.click(urlAddButton, leftClick);
+    
+    it('UrlList now contains a UrlListElement component', () => {
+        const renderedUrlListElement = getByTestId('urlListElement');
+        
+        expect(renderedUrlListElement).toBeInTheDocument();
+    });
+
+    it('UrlListElement contains the Full/Short URL pair', () => {
+        const fullUrlListElement = getByTestId('urlListElementFull');
+        const shortUrlListElement = getByTestId('urlListElementShort');
+
+        expect(fullUrlListElement).toHaveTextContent(fullUrl);
+        expect(shortUrlListElement).toHaveTextContent(shortUrl);
+    });
 });
