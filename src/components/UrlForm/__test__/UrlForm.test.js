@@ -74,4 +74,6 @@ describe('User shortens URL using the UrlForm component', () => {
         expect(fullUrlListElement).toHaveTextContent(fullUrl);
         expect(shortUrlListElement).toHaveTextContent(shortUrl);
     });
+
+    cleanup();
 });
