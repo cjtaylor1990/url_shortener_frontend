@@ -2,6 +2,13 @@ import React from 'react';
 import './UrlList.css';
 
 class UrlList extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			urlPairs: []
+		}
+	};
 
 	render() {
     	return(
