@@ -12,18 +12,21 @@ exports[`User accesses UrlForm component matches snapshot 1`] = `
     <input
       className="fullUrl"
       data-testid="urlAdderFullUrl"
+      onChange={[Function]}
       placeholder="Original URL"
       type="text"
     />
     <input
       className="shortUrl"
       data-testid="urlAdderShortUrl"
-      placeholder="Shortened URL"
+      onChange={[Function]}
+      placeholder="Short URL Key"
       type="text"
     />
     <button
       className="addUrl"
       data-testid="urlAdderButton"
+      onClick={[Function]}
       type="submit"
     >
        Add URL 

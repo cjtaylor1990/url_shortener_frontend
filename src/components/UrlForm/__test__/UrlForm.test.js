@@ -6,11 +6,9 @@ import renderer from 'react-test-renderer';
 
 import UrlForm from '../UrlForm.js';
 
-//afterEach(cleanup);
+afterEach(cleanup);
 
 describe('User accesses UrlForm component', () => {
-
-    afterEach(cleanup);
     
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -46,28 +44,41 @@ describe('User accesses UrlForm component', () => {
 
 describe('User shortens URL using the UrlForm component', () => {
     
-    const { getByTestId } = render(<UrlForm />);
-    const fullUrlInput = getByTestId('urlAdderFullUrl');
-    const shortUrlInput = getByTestId('urlAdderShortUrl');
-    const urlAddButton = getByTestId('urlAdderButton');
-
-    const fullUrl = 'http//www.userslongurl.com';
-    const shortKey = 'shorturl'
-    const shortUrl = 'http//www.urlshortener.com/' + shortKey;
-
-    fireEvent.change(fullUrlInput, {target: {value: fullUrl}});
-    fireEvent.change(shortUrlInput, {target: {value: shortKey}});
-
-    const leftClick = {button: 1};
-    fireEvent.click(urlAddButton, leftClick);
-    
     it('UrlList now contains a UrlListElement component', () => {
+        const { getByTestId } = render(<UrlForm />);
+        const fullUrlInput = getByTestId('urlAdderFullUrl');
+        const shortUrlInput = getByTestId('urlAdderShortUrl');
+        const urlAddButton = getByTestId('urlAdderButton');
+
+        const fullUrl = 'http//www.userslongurl.com';
+        const shortKey = 'shorturl'
+
+        fireEvent.change(fullUrlInput, {target: {value: fullUrl}});
+        fireEvent.change(shortUrlInput, {target: {value: shortKey}});
+
+        const leftClick = {button: 1};
+        fireEvent.click(urlAddButton, leftClick);
+
         const renderedUrlListElement = getByTestId('urlListElement');
         
         expect(renderedUrlListElement).toBeInTheDocument();
     });
 
     it('UrlListElement contains the Full/Short URL pair', () => {
+        const { getByTestId } = render(<UrlForm />);
+        const fullUrlInput = getByTestId('urlAdderFullUrl');
+        const shortUrlInput = getByTestId('urlAdderShortUrl');
+        const urlAddButton = getByTestId('urlAdderButton');
+
+        const fullUrl = 'http//www.userslongurl.com';
+        const shortKey = 'shorturl'
+        const shortUrl = 'http//www.urlshortener.com/' + shortKey;
+
+        fireEvent.change(fullUrlInput, {target: {value: fullUrl}});
+        fireEvent.change(shortUrlInput, {target: {value: shortKey}});
+
+        const leftClick = {button: 1};
+        fireEvent.click(urlAddButton, leftClick);
         const fullUrlListElement = getByTestId('urlListElementFull');
         const shortUrlListElement = getByTestId('urlListElementShort');
 
@@ -75,5 +86,4 @@ describe('User shortens URL using the UrlForm component', () => {
         expect(shortUrlListElement).toHaveTextContent(shortUrl);
     });
 
-    cleanup();
 });
