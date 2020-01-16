@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`After being passed a URL pair, the UrlListElement initially matches snapshot 1`] = `
+<div
+  className="urlListElement"
+  data-testid="urlListElement"
+>
+  <div
+    className="fullUrl"
+    data-testid="urlListElementFull"
+  >
+    http//www.userslongurl.com
+  </div>
+  <div
+    className="shortUrl"
+    data-testid="urlListElementShort"
+  >
+    http//www.urlshortener.com/shorturl
+  </div>
+</div>
+`;
