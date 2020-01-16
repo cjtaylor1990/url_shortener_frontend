@@ -35,6 +35,18 @@ describe('User initially accesses App', () => {
 
 describe('User submits username and password', () => {
 
+    it('Username and password are empty. App stays the same', () => {
+        const { getByTestId, queryByTestId } = render(<App />);
+        const loginButton = getByTestId('loginFormLogin');
+
+        const leftClick = {button: 1};
+        fireEvent.click(loginButton, leftClick);
+
+        const renderedUrlForm = queryByTestId('urlForm');
+        expect(renderedUrlForm).not.toBeInTheDocument();
+
+    });
+
     it('Username and password are recognized. App renders UrlForm', () => {
         const { getByTestId } = render(<App />);
     

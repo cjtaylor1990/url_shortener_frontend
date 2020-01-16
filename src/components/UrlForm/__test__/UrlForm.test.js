@@ -43,6 +43,18 @@ describe('User accesses UrlForm component', () => {
 });
 
 describe('User shortens URL using the UrlForm component', () => {
+
+    it('Short and Full URL input is empty. No URL pair is added', () => {
+        const { getByTestId, queryByTestId } = render(<UrlForm />);
+        const urlAddButton = getByTestId('urlAdderButton');
+
+        const leftClick = {button: 1};
+        fireEvent.click(urlAddButton, leftClick);
+
+        const renderedUrlListElement = queryByTestId('urlListElement');
+        
+        expect(renderedUrlListElement).not.toBeInTheDocument();
+    });
     
     it('UrlList now contains a UrlListElement component', () => {
         const { getByTestId } = render(<UrlForm />);
