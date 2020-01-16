@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The UrlAdder initially matches snapshot 1`] = `
+<div
+  className="urlAdder"
+  data-testid="urlAdder"
+>
+  <input
+    className="fullUrl"
+    data-testid="urlAdderFullUrl"
+    onChange={[Function]}
+    placeholder="Original URL"
+    type="text"
+  />
+  <input
+    className="shortUrl"
+    data-testid="urlAdderShortUrl"
+    onChange={[Function]}
+    placeholder="Short URL Key"
+    type="text"
+  />
+  <button
+    className="addUrl"
+    data-testid="urlAdderButton"
+    onClick={[Function]}
+    type="submit"
+  >
+     Add URL 
+  </button>
+</div>
+`;
